@@ -8,4 +8,9 @@
 # odds_and_evens("abcdefg",false)   # => "aceg"
 
 def odds_and_evens(string, return_odds)
+  if return_odds
+    string.chars.each_with_index.filter_map{|char, index| char if index % 2 != 0}.join
+  else
+    string.chars.each_with_index.filter_map{|char, index| char if index % 2 == 0}.join
+  end
 end
